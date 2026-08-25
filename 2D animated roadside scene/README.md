@@ -261,7 +261,7 @@ This project is developed as part of the **Graphics Lab (GLUT Project)** at **Ea
 | Student Name | Student ID | Department | Role / Contribution |
 | :--- | :--- | :--- | :--- |
 | **Md. Jamee** | *[Your Student ID]* | CSE, East Delta University | Project Lead, Animation & Road Physics |
-| **[Group Member 2]** | *[Student ID]* | CSE, East Delta University | Environment, Lighting & Sky Cycle |
+| **Efti Hasan** | *[Student ID]* | CSE, East Delta University | Environment, Lighting & Sky Cycle |
 | **[Group Member 3]** | *[Student ID]* | CSE, East Delta University | Vehicle Modeling, Transformations & Interactivity |
 
 ---
