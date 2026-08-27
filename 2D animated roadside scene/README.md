@@ -35,7 +35,7 @@
 
 The **2D Animated Roadside Scene** is an interactive computer graphics simulation built using **C++** and the **OpenGL Utility Toolkit (GLUT / FreeGLUT)**. 
 
-The project brings to life a bustling roadside environment featuring multiple layers of real-time animations, geometric transformations, and user-driven interactions. It demonstrates foundational and advanced 2D computer graphics concepts, including double buffering for smooth frame rendering, hierarchical modeling, trigonometric motion dynamics, and real-time state manipulation (such as day/night cycles and weather transitions).
+The project brings to life a bustling roadside environment featuring multiple layers of real-time animations, geometric transformations, and user-driven interactions. It demonstrates foundational [...]
 
 ---
 
@@ -261,14 +261,14 @@ This project is developed as part of the **Graphics Lab (GLUT Project)** at **Ea
 | Student Name | Student ID | Department | Role / Contribution |
 | :--- | :--- | :--- | :--- |
 | **Md. Jamee** | *[Your Student ID]* | CSE, East Delta University | Project Lead, Animation & Road Physics |
-| **Efti Hasan** | *[Student ID]* | CSE, East Delta University | Environment, Lighting & Sky Cycle |
+| **[Group Member 2]** | *[Student ID]* | CSE, East Delta University | Environment, Lighting & Sky Cycle |
 | **[Group Member 3]** | *[Student ID]* | CSE, East Delta University | Vehicle Modeling, Transformations & Interactivity |
 
 ---
 
 ## 📜 License
 
-This project is created for educational and academic assessment purposes for the **Graphics Lab** course at **East Delta University**. Feel free to use and reference this codebase for academic learning.
+This project is created for educational and academic assessment purposes for the **Graphics Lab** course at **East Delta University**. Feel free to use and reference this codebase for academic le[...]
 
 ---
 
