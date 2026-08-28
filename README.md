@@ -30,18 +30,11 @@ Everything in the scene is rendered entirely from scratch using fundamental Open
 
 ---
 
-## 🎥 Demo Video
+## 🎥 Animation Demo
 
 <div align="center">
-  <a href="https://youtu.be/YSR4k3ALjzQ" target="_blank">
-    <img src="https://img.youtube.com/vi/YSR4k3ALjzQ/maxresdefault.jpg" width="80%" alt="2D Animated Roadside Scene Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);" />
-  </a>
-  <p>
-    <a href="https://youtu.be/YSR4k3ALjzQ" target="_blank">
-      <strong>▶️ Watch Full Animation on YouTube</strong>
-    </a>
-  </p>
-  <p><em>Direct Video URL: <a href="https://youtu.be/YSR4k3ALjzQ">https://youtu.be/YSR4k3ALjzQ</a></em></p>
+  <img src="resources/img/2D_Street_View-ezgif.gif" width="85%" alt="2D Animated Roadside Scene Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);" />
+  <p><em>Real-time 2D animated roadside scene with continuous traffic, flapping birds, and drifting clouds</em></p>
 </div>
 
 ---
@@ -88,13 +81,14 @@ Everything in the scene is rendered entirely from scratch using fundamental Open
 2d-roadside-animation/
 ├── resources/
 │   └── img/
-│       ├── one.png               # Scenario 1: Initial Scene Setup
-│       ├── scenario two.png      # Scenario 2: Traffic Progression
-│       ├── scenario three.png    # Scenario 3: Open Road & Flying Birds
-│       └── scenario four.png     # Scenario 4: Cloud Drift & Vehicle Loop
-├── .gitignore                    # Excludes heavy video files from repository
-├── main.cpp                      # Complete OpenGL / GLUT source code
-└── README.md                     # Project documentation & walkthrough
+│       ├── 2D_Street_View-ezgif.gif # Live animation recording
+│       ├── one.png                  # Scenario 1: Initial Scene Setup
+│       ├── scenario two.png         # Scenario 2: Traffic Progression
+│       ├── scenario three.png       # Scenario 3: Open Road & Flying Birds
+│       └── scenario four.png        # Scenario 4: Cloud Drift & Vehicle Loop
+├── .gitignore                       # Excludes heavy video files from repository
+├── main.cpp                         # Complete OpenGL / GLUT source code
+└── README.md                        # Project documentation & walkthrough
 ```
 
 ---
