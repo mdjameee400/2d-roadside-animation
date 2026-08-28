@@ -95,142 +95,63 @@ Everything in the scene is rendered entirely from scratch using fundamental Open
 
 ## 🛠️ Installation and Configuration
 
-This project is an OpenGL-based graphics project developed in **C/C++** using **FreeGLUT**. The instructions below outline how to set up the project on Windows using **Code::Blocks** with the **MSYS2 MinGW64** environment.
+This project requires a C++ environment configured with the OpenGL/GLUT library. The instructions below outline how to set up the project using the **Code::Blocks** IDE with **MSYS2 (MinGW64)**.
 
-### 1. Requirements & Prerequisites
+### 1. Prerequisites
 
-- **Operating System:** Windows OS
+Before proceeding, ensure that **Code::Blocks** and the **MinGW64** compiler are installed. You will also need the **FreeGLUT** development files (headers, libraries, and DLLs) configured on your system.
+
+- **OS:** Windows
 - **IDE:** Code::Blocks
-- **Compiler & Toolchain:** MSYS2 MinGW64
-- **Graphics API:** OpenGL
-- **Toolkit:** FreeGLUT
+- **Toolchain:** MSYS2 MinGW 64-bit
+- **Libraries:** OpenGL & FreeGLUT
 
----
+### 2. MSYS2 & FreeGLUT Setup
 
-### 2. Setup and Installation
-
-#### Step 1: Install MSYS2
-1. Download and install MSYS2 from: [https://www.msys2.org/](https://www.msys2.org/)
-2. During installation, use the default installation directory:
-   ```text
-   C:\msys64
-   ```
-
-#### Step 2: Install FreeGLUT via MSYS2
-1. Open **MSYS2 MinGW 64-bit** from the Start Menu.
-   > [!IMPORTANT]
-   > Make sure to use the **MINGW64 terminal** (`MSYS2 MinGW 64-bit`).
-
-2. Run the following command:
+1. **Install MSYS2:** Download and install MSYS2 from [msys2.org](https://www.msys2.org/) (default path: `C:\msys64`).
+2. **Install FreeGLUT:** Open the **MSYS2 MinGW 64-bit** terminal (`MINGW64`) from the Start Menu and run:
    ```bash
    pacman -S mingw-w64-x86_64-freeglut
    ```
-3. When prompted, enter `Y` and press `Enter` to confirm the installation.
-4. After installation, FreeGLUT headers and libraries will be available under:
-   ```text
-   C:\msys64\mingw64
-   ```
-
----
+   *Press `Y` and Enter when prompted. FreeGLUT files will be installed under `C:\msys64\mingw64`.*
 
 ### 3. Code::Blocks Configuration
 
-1. Launch **Code::Blocks** and open the project.
-2. Go to: **Project → Build options...**
-3. Select the **project name** from the left panel so settings apply across all build targets.
+Open your project in **Code::Blocks**, navigate to **Project → Build options...**, and select the top-level project name from the left panel:
 
-#### A. Compiler Search Directory
-- Navigate to: **Search directories → Compiler**
-- Click **Add** and insert:
+- **Compiler Search Directory:**  
+  Go to **Search directories → Compiler** and click **Add**:
   ```text
   C:\msys64\mingw64\include
   ```
 
-#### B. Linker Search Directory
-- Navigate to: **Search directories → Linker**
-- Click **Add** and insert:
+- **Linker Search Directory:**  
+  Go to **Search directories → Linker** and click **Add**:
   ```text
   C:\msys64\mingw64\lib
   ```
 
-#### C. Linker Libraries
-- Open the **Linker settings** tab.
-- In the **Link libraries** section, click **Add** and include:
+- **Linker Libraries:**  
+  Go to **Linker settings** and add the following libraries under **Link libraries**:
   ```text
   freeglut
   opengl32
   glu32
   ```
-- Click **OK** to save the configuration.
 
-#### D. FreeGLUT Runtime DLL
-- Copy the FreeGLUT DLL from:
-  ```text
-  C:\msys64\mingw64\bin\libfreeglut.dll
-  ```
-  to your project's executable output directory:
+- **FreeGLUT Runtime DLL:**  
+  Copy `libfreeglut.dll` from `C:\msys64\mingw64\bin\libfreeglut.dll` to your project's executable output directory:
   ```text
   YourProject\bin\Debug\
   ```
-  > [!NOTE]
-  > `libfreeglut.dll` must reside in the same folder as the built `.exe` for the application to launch successfully.
 
----
+### 4. Code Integration & Running
 
-### 4. Running the Project / Code Integration
-
-1. Open the project in **Code::Blocks**.
-2. In the **Management** side panel, expand the **Sources** folder and ensure `main.cpp` is included.
-3. If starting from a new template, replace the default boilerplate with this repository's [main.cpp](file:///d:/East%20Delta%20University/9th%20sem/Graphics%20Lab%20%28GLUT%20project%20%29/main.cpp).
-4. Build and run the project using <kbd>F9</kbd> (or go to **Build → Build and run**).
-5. The OpenGL graphics window titled *"Moving Cars Project"* will appear with the active animation.
-
----
-
-### 5. Alternative: GCC / MinGW Command Line (Windows)
-
-Open a terminal or PowerShell in the root folder and run:
-
-```bash
-g++ main.cpp -o roadside_animation.exe -I"C:\msys64\mingw64\include" -L"C:\msys64\mingw64\lib" -lfreeglut -lopengl32 -lglu32
-```
-
-Launch the executable:
-
-```bash
-./roadside_animation.exe
-```
-
----
-
-### 6. Alternative: Linux (Ubuntu / Debian)
-
-Install OpenGL and FreeGLUT development packages:
-
-```bash
-sudo apt update
-sudo apt install build-essential freeglut3-dev libglu1-mesa-dev libgl1-mesa-dev
-```
-
-*(Note: If compiling on Linux, comment out or remove `#include <windows.h>` in `main.cpp`)*
-
-Compile and execute:
-
-```bash
-g++ main.cpp -o roadside_animation -lGL -lGLU -lglut
-./roadside_animation
-```
-
----
-
-### ⚙️ Technologies Used
-
-- **Language:** C / C++
-- **Graphics API:** OpenGL
-- **Windowing & Input:** FreeGLUT
-- **Environment:** MSYS2 MinGW64
-- **IDE:** Code::Blocks
-- **Platform:** Windows OS / Linux
+1. In the **Management** side panel, expand the **Sources** folder and open `main.cpp`.
+2. Delete any existing template boilerplate inside the editor.
+3. Copy the source code from this repository's [main.cpp](file:///d:/East%20Delta%20University/9th%20sem/Graphics%20Lab%20%28GLUT%20project%20%29/main.cpp) and paste it into the editor.
+4. Save the file and press <kbd>F9</kbd> (or go to **Build → Build and run**).
+5. The OpenGL graphics window will launch and display the animated roadside scene.
 
 ---
 
