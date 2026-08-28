@@ -65,13 +65,15 @@ Everything in the scene is rendered entirely from scratch using fundamental Open
 
 ## 🧩 Features
 
-- **Mathematical Circle & Ellipse Generation** — Custom `circle(rx, ry, cx, cy)` function leveraging standard trigonometry (`cos` and `sin` across 360°) to generate smooth curved surfaces for the sun, clouds, tree foliage, flower petals, and vehicle wheels.
-- **Sinusoidal Wing Flapping Physics** — Real-time wing flapping computed dynamically using `sin(birdShift * 0.15) * 8` to oscillate bird wing vertices up and down during flight.
-- **Differential Vehicle Speeds & Looping** — The red sports car moves at `tx += 0.9` while the cyan cargo truck moves at `bx += 0.7`, featuring automatic boundary wrap-around logic (`tx > 500 -> -500`, `bx > 500 -> -510`) to maintain continuous organic traffic flow.
-- **Matrix Stack Isolation** — All animated models (vehicles, birds, clouds) are encapsulated within `glPushMatrix()` and `glPopMatrix()` calls to prevent coordinate transformations from spilling into static environment geometry.
-- **Interactive & Ambient Cloud Motion** — Clouds drift continuously across the sky (`shift += 0.1`) while seamlessly accepting real-time user steering inputs via GLUT special key callback (`glutSpecialFunc`).
-- **Layered 2D Depth Ordering** — Renders geometry using the classic painter's algorithm order (Sky → Bushes → Ground → Trees → House → Road & Streetlight → Birds & Clouds → Vehicles → Foreground Flowers).
-- **Flicker-Free Double Buffering** — Utilizes `GLUT_DOUBLE` with `glutSwapBuffers()` and smooth frame triggering via `glutPostRedisplay()`.
+- Continuous 2D roadside animation with multi-layered scenery
+- Two independent vehicle types: Red sports car and cyan cargo truck with differential speeds
+- Custom trigonometric circle & ellipse generation algorithm using `sin()` and `cos()`
+- Dynamic bird flocking with sinusoidal wing-flapping physics
+- Ambient cloud drift with real-time interactive keyboard control (<kbd>←</kbd> / <kbd>→</kbd>)
+- Procedural environment: House, layered trees, roadside bushes, flowers, and streetlight
+- Matrix stack isolation using `glPushMatrix()` and `glPopMatrix()`
+- Automatic boundary wrap-around for infinite looping animation
+- Flicker-free double-buffered RGB rendering with `GLUT_DOUBLE` and `glutSwapBuffers()`
 
 ---
 
