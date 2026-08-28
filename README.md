@@ -1,129 +1,155 @@
 # 🚗 2D Animated Roadside Scene
 
-[![OpenGL](https://img.shields.io/badge/OpenGL-3.3%2B-5586A4?logo=opengl\&logoColor=white)](https://www.opengl.org/)
+[![OpenGL](https://img.shields.io/badge/OpenGL-3.3%2B-5586A4?logo=opengl&logoColor=white)](https://www.opengl.org/)
 [![GLUT](https://img.shields.io/badge/Toolkit-GLUT%20%2F%20FreeGLUT-green.svg)](https://www.opengl.org/resources/libraries/glut/)
-[![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20C-00599C?logo=c%2B%2B\&logoColor=white)](https://isocpp.org/)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20C-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 
 > **East Delta University**  
 > **Department of Computer Science & Engineering**  
 > **Course Name:** Computer Graphics Lab  
 > **Course ID:** CSE 322.5  
 > **Repository:** https://github.com/mdjameee400/2d-roadside-animation.git
----
-
-## Project Overview
-
-We built this 2D animated roadside scene using C++ and the OpenGL Utility Toolkit (GLUT) for our Computer Graphics Lab project. The goal was to create a lively environment from scratch using only basic geometric shapes.
-
-There are no external images or textures used in this project. Everything you see is drawn using raw OpenGL polygons and math-based circles. It is a great starting point for anyone learning how to draw shapes, apply colors, and create continuous animations in OpenGL.
 
 ---
 
-## What's in the Scene?
+## 📖 Project Overview
 
-🚘 **Continuous Vehicle Animation**
+This **2D Animated Roadside Scene** is built using **C++** and the **OpenGL Utility Toolkit (GLUT)** for the Computer Graphics Lab (CSE 322.5) course at East Delta University. The project demonstrates real-time 2D computer graphics rendering, hierarchical transformations, mathematical parametric modeling, and interactive keyboard event handling.
 
-A red car and a cyan truck move continuously from right to left. When they drive off the screen, they automatically loop back to the start so the traffic never stops.
-
-🏞️ **Detailed Static Environment**
-
-The scene includes layered foreground and background trees, green bushes, and small flowers by the road. We also drew a bright blue sky, a yellow sun, and a multi-layered road with lane markings and a streetlight.
-
-🎮 **Interactive Clouds**
-
-You can control the clouds manually. Pressing the left or right arrow keys on your keyboard will drift the clouds across the sky.
+Everything in the scene is rendered entirely from scratch using fundamental OpenGL primitives (`GL_POLYGON`, `GL_LINES`, `GL_TRIANGLES`) and custom trigonometric circle algorithms — without importing any external image textures or assets.
 
 ---
 
-## Demo Video
+## 📸 Screenshots
 
-*Video dis ekhane*
-
----
-
-## Interactive Controls
-
-| Key                      | Action                   |
-| :----------------------- | :----------------------- |
-| <kbd>← Left Arrow</kbd>  | Move clouds to the left  |
-| <kbd>→ Right Arrow</kbd> | Move clouds to the right |
-
-*The car and truck animate automatically as soon as the program starts. No input is needed for them.*
+| Scenario 1: Initial Scene Setup | Scenario 2: Traffic Progression |
+| :---: | :---: |
+| ![Scenario 1](resources/img/one.png) | ![Scenario 2](resources/img/scenario%20two.png) |
+| **Scenario 3: Open Road & Flying Birds** | **Scenario 4: Cloud Drifting & Continuous Loop** |
+| ![Scenario 3](resources/img/scenario%20three.png) | ![Scenario 4](resources/img/scenario%20four.png) |
 
 ---
 
-## How It Works
+## 🎥 Demo Video
 
-Here is a quick breakdown of the logic we used:
-
-**Drawing Circles:** OpenGL does not have a direct tool to draw circles. We wrote a custom circle function using basic trigonometry (sin and cos) to draw a 360-sided polygon. We used this logic to draw the sun, clouds, vehicle wheels, and tree leaves.
-
-**Making Things Move:** To move the car and truck, we used variables (`tx` for the car, `bx` for the truck). We increase these numbers every frame and use `glTranslatef()` to push the vehicles left. When the vehicles go completely off-screen, we reset the values to loop them back.
-
-**The Animation Loop:** At the end of the drawing functions, we call `glutPostRedisplay()`. This tells OpenGL to redraw the screen immediately and creates a smooth continuous animation.
-
-**Matrix Protection:** We wrapped the car and truck code inside `glPushMatrix()` and `glPopMatrix()`. This ensures that `glTranslatef()` only moves the vehicles and the rest of the world (trees, sun, road) stays in place.
+<div align="center">
+  <a href="https://youtu.be/YSR4k3ALjzQ" target="_blank">
+    <img src="https://img.youtube.com/vi/YSR4k3ALjzQ/maxresdefault.jpg" width="80%" alt="2D Animated Roadside Scene Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25);" />
+  </a>
+  <p>
+    <a href="https://youtu.be/YSR4k3ALjzQ" target="_blank">
+      <strong>▶️ Watch Full Animation on YouTube</strong>
+    </a>
+  </p>
+  <p><em>Direct Video URL: <a href="https://youtu.be/YSR4k3ALjzQ">https://youtu.be/YSR4k3ALjzQ</a></em></p>
+</div>
 
 ---
 
-## Project Directory Structure
+## 📁 Scene Components
+
+| Component | Description |
+| :--- | :--- |
+| `Sky & Sun` | Vibrant sky backdrop (`GL_POLYGON`) with a parametric radiant yellow sun and orthogonal line rays (`GL_LINES`) |
+| `Drifting Clouds` | Overlapping multi-circle cloud clusters with auto-drift and interactive user keyboard translation |
+| `Animated Birds` | Flocking bird silhouettes with dynamic trigonometric sinusoidal wing-flapping physics |
+| `House & Scenery` | Layered residential home with roof triangle, dual-pane tinted windows, door knob, and surrounding landscape |
+| `Foliage & Flora` | Multi-canopy large trees, roadside small trees, clustered green bushes, and vibrant blooming flowers |
+| `Roadway & Lighting` | Dark asphalt roadway with iterative dashed lane markings, green verge, and roadside streetlight |
+| `Moving Vehicles` | Streamlined red sports car and dual-color cargo truck with windows, headlights, and hubbed wheels |
+
+---
+
+## 🎮 Controls
+
+| Key | Action |
+| :--- | :--- |
+| <kbd>← Left Arrow</kbd> | Drift clouds to the left (`shift -= 2`) |
+| <kbd>→ Right Arrow</kbd> | Drift clouds to the right (`shift += 2`) |
+| **Autonomous** | Cars, trucks, clouds, and birds animate continuously upon launch |
+
+---
+
+## 🧩 Features
+
+- **Mathematical Circle & Ellipse Generation** — Custom `circle(rx, ry, cx, cy)` function leveraging standard trigonometry (`cos` and `sin` across 360°) to generate smooth curved surfaces for the sun, clouds, tree foliage, flower petals, and vehicle wheels.
+- **Sinusoidal Wing Flapping Physics** — Real-time wing flapping computed dynamically using `sin(birdShift * 0.15) * 8` to oscillate bird wing vertices up and down during flight.
+- **Differential Vehicle Speeds & Looping** — The red sports car moves at `tx += 0.9` while the cyan cargo truck moves at `bx += 0.7`, featuring automatic boundary wrap-around logic (`tx > 500 -> -500`, `bx > 500 -> -510`) to maintain continuous organic traffic flow.
+- **Matrix Stack Isolation** — All animated models (vehicles, birds, clouds) are encapsulated within `glPushMatrix()` and `glPopMatrix()` calls to prevent coordinate transformations from spilling into static environment geometry.
+- **Interactive & Ambient Cloud Motion** — Clouds drift continuously across the sky (`shift += 0.1`) while seamlessly accepting real-time user steering inputs via GLUT special key callback (`glutSpecialFunc`).
+- **Layered 2D Depth Ordering** — Renders geometry using the classic painter's algorithm order (Sky → Bushes → Ground → Trees → House → Road & Streetlight → Birds & Clouds → Vehicles → Foreground Flowers).
+- **Flicker-Free Double Buffering** — Utilizes `GLUT_DOUBLE` with `glutSwapBuffers()` and smooth frame triggering via `glutPostRedisplay()`.
+
+---
+
+## 📂 Project Directory Structure
 
 ```text
 2d-roadside-animation/
-├── src/
-│   └── moving_cars.cpp           # The main C++ source code
-└── README.md                     # Project documentation
+├── resources/
+│   └── img/
+│       ├── one.png               # Scenario 1: Initial Scene Setup
+│       ├── scenario two.png      # Scenario 2: Traffic Progression
+│       ├── scenario three.png    # Scenario 3: Open Road & Flying Birds
+│       └── scenario four.png     # Scenario 4: Cloud Drift & Vehicle Loop
+├── .gitignore                    # Excludes heavy video files from repository
+├── main.cpp                      # Complete OpenGL / GLUT source code
+└── README.md                     # Project documentation & walkthrough
 ```
 
-## Build & Installation Guide
+---
 
-You can run this project easily on Windows or Linux.
+## 🛠️ Build & Installation Guide
 
-### Method 1: CodeBlocks IDE
+You can compile and run this project on Windows (Code::Blocks / GCC MinGW) or Linux.
 
-1. Open Code::Blocks
-2. Go to **File > New > Project**
-3. Select **GLUT project** and click **Go**
-4. Name your project and point it to your GLUT installation folder
-5. Replace the default `main.cpp` with our `moving_cars.cpp` code
-6. Hit **F9** to Build and Run
+### Method 1: Code::Blocks IDE (Windows)
 
-### Method 2: GCC / MinGW Command Line
+1. Open **Code::Blocks**.
+2. Go to **File > New > Project**.
+3. Select **GLUT project** and click **Go**.
+4. Set the project title and specify your GLUT / FreeGLUT installation directory.
+5. Replace the contents of `main.cpp` with the repository's [main.cpp](file:///d:/East%20Delta%20University/9th%20sem/Graphics%20Lab%20%28GLUT%20project%20%29/main.cpp).
+6. Press **F9** (or click **Build and Run**).
 
-Open your terminal in the project folder and run:
+### Method 2: GCC / MinGW Command Line (Windows)
+
+Open a terminal or PowerShell in the root folder and run:
 
 ```bash
-g++ moving_cars.cpp -o roadside_animation.exe -lfreeglut -lopengl32 -lglu32
+g++ main.cpp -o roadside_animation.exe -lfreeglut -lopengl32 -lglu32
 ```
 
-Then run the program:
+Launch the executable:
 
 ```bash
 ./roadside_animation.exe
 ```
 
-### Method 3: Linux (Ubuntu/Debian)
+### Method 3: Linux (Ubuntu / Debian)
 
-Install GLUT if you haven't already:
+Install OpenGL and FreeGLUT development packages:
 
 ```bash
 sudo apt update
 sudo apt install build-essential freeglut3-dev libglu1-mesa-dev libgl1-mesa-dev
 ```
 
-Remove `#include <windows.h>` from the top of the `.cpp` file.
+*(Note: If compiling on Linux, comment out or remove `#include <windows.h>` in `main.cpp`)*
 
-Compile and run:
+Compile and execute:
 
 ```bash
-g++ moving_cars.cpp -o roadside_animation -lGL -lGLU -lglut
+g++ main.cpp -o roadside_animation -lGL -lGLU -lglut
 ./roadside_animation
 ```
 
-## Group Information & Contributors
-| **Student Name** | **Student ID** | **Department** | **Role / Contribution** |
-|---|---|---|---|
+---
+
+## 👥 Group Information & Contributors
+
+| Student Name | Student ID | Department | Role / Contribution |
+| :--- | :--- | :--- | :--- |
 | **[MD Abdullah Al Jamee](https://github.com/mdjameee400)** | *233028912* | CSE | Animation & Road Physics |
 | **[Efti Hasan](https://github.com/Efti-Hasan)** | *233031412* | CSE | Environment, Lighting & Sky Cycle |
 | **[Chowdhury Shams Intisar](https://github.com/intisar)** | *233030512* | CSE | Vehicle Modeling, Transformations & Interactivity |
-
